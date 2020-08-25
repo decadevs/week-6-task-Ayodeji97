@@ -1,0 +1,112 @@
+package com.mylearning.uireplicationandtesting
+
+import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_main.*
+
+class CountryNumberValidation {
+
+    companion object {
+        operator fun invoke(vararg allEdits: EditText): EditText? {
+
+            for (view in allEdits) {
+                if (view.text.isEmpty()) {
+                    return view
+                }
+            }
+            return null
+        }
+
+
+
+
+    /**
+     * The input is not valid if..
+     * ...The name || username || password || phone contact is empty
+     * ...The user phone number does not start with 234 || +234 || 0
+     * ...The user phone number is less than 11 or greater than 13
+     * .. The name and password contains less than 2 digits
+     *
+     *
+     */
+
+    fun validatePhoneNumber(userPhone: String) : Boolean {
+        if (userPhone.startsWith("0") && !userPhone.startsWith("234")) {
+            userPhone.removePrefix("0")
+            userPhone.commonPrefixWith("+234")
+            return true
+        }
+        return false
+
+    }
+        fun validateNameLength (name : String, username : String) : Boolean {
+            if (name.count { it.isDigit() } < 3 && username.count { it.isDigit() } < 2) {
+                return false
+            }
+            return true
+        }
+
+        fun validateContactLength (contact : String) : Boolean {
+            if (contact.count { it.isDigit() } < 11 && contact.count { it.isDigit() } > 13) {
+                return false
+            }
+            return true
+        }
+
+        fun fieldsEmpty (name : String, username: String, phone : String, password : String) : Boolean {
+            if (name.isEmpty() || username.isEmpty() || phone.isEmpty() || password.isEmpty()) {
+
+            return false
+           }
+            return true
+        }
+
+        fun notStartWithCountryCode(contact: String): Boolean {
+
+            if (!contact.startsWith("234") || !contact.startsWith("0") || !contact.startsWith("+234")) {
+                return false
+            }
+            return true
+
+        }
+
+
+
+
+
+//    fun validateRegistrationInput (
+//        name : String,
+//        userName : String,
+//        password : String,
+//        phone : String
+//    ) : Boolean {
+//
+//        if (name.isEmpty() || userName.isEmpty() || phone.isEmpty() || password.isEmpty()) {
+//            //tvRegisterHeadingTop.error = "Name connot be empty"
+//            return false
+//        }
+//
+//        if (!phone.startsWith("234") || !phone.startsWith("0") || !phone.startsWith("+234")) {
+//            return false
+//        }
+//
+//        if (phone.count { it.isDigit()} < 11) {
+//            return false
+//        }
+//
+//        if (phone.count{ it.isDigit()} > 13) {
+//            return false
+//        }
+//
+//        if (name.count { it.isDigit() } < 3) {
+//            return false
+//        }
+//
+//        if (userName.count { it.isDigit() } < 2) {
+//            return false
+//        }
+//
+//        return true
+//    }
+
+    }
+}

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UiReplicationAndTesting</string>
+    <string-array name="Sex">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+</resources>
