@@ -8,22 +8,24 @@
     android:orientation="vertical"
     tools:context=".ProfileActivity">
 
+    <!--    Upper layout-->
     <LinearLayout
+        android:id="@+id/upperLayerPart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_weight="0.3"
-        android:id="@+id/upperLayerPart"
         android:background="@color/colorPrimary">
 
+        <!--        Welcome text-->
         <TextView
             android:id="@+id/tvWelcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
             android:layout_marginTop="100dp"
-            android:gravity="center"
             android:fontFamily="sans-serif-medium"
+            android:gravity="center"
             android:text="Welcome"
             android:textColor="@color/whiteColor"
             android:textSize="30sp"
@@ -32,6 +34,7 @@
 
     </LinearLayout>
 
+    <!--    Frame layout for button back-->
     <FrameLayout
         android:id="@+id/flBackToHome"
         android:layout_width="match_parent"
@@ -57,23 +60,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:text="Back To Home"
             android:textColor="@color/lightWhite"
-            android:clickable="true"
-            android:focusable="true"
             android:textSize="15sp"
             android:textStyle="bold" />
     </FrameLayout>
 
 
+    <!--    Lower layout for input-->
     <LinearLayout
         android:id="@+id/lowerLayerPart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="0.6"
         android:orientation="vertical"
-        android:layout_marginTop="20dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
@@ -81,8 +85,8 @@
             android:id="@+id/nameImageInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
 
 
             <ImageView
@@ -116,12 +120,14 @@
 
         </LinearLayout>
 
+        <!--  Username section-->
+
         <LinearLayout
             android:id="@+id/userNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
 
 
             <ImageView
@@ -155,12 +161,13 @@
 
         </LinearLayout>
 
+        <!--Email section-->
         <LinearLayout
             android:id="@+id/userEmailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
 
 
             <ImageView
@@ -195,20 +202,21 @@
 
         </LinearLayout>
 
+        <!--Contact section-->
         <LinearLayout
             android:id="@+id/userContactInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
 
 
             <ImageView
                 android:id="@+id/ivContact"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:padding="4dp"
                 android:layout_marginEnd="10dp"
+                android:padding="4dp"
                 android:src="@drawable/ic_baseline_phone_in_talk_24" />
 
             <LinearLayout
@@ -236,13 +244,15 @@
         </LinearLayout>
 
 
+        <!--Gender section-->
+
 
         <LinearLayout
             android:id="@+id/userGenderInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
 
 
             <ImageView

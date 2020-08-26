@@ -21,8 +21,6 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4ClassRunner::class)
 class MainActivityTest {
 
-
-
     @Test
     fun test_isActivityInView() {
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
@@ -35,8 +33,6 @@ class MainActivityTest {
     fun test_visibility_all_widget() {
 
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-
-
 
         onView(withId(R.id.tvRegisterHeadingTop))
             .check(matches((isDisplayed())))
@@ -53,12 +49,8 @@ class MainActivityTest {
         onView(withId(R.id.etPassword))
             .check(matches((isDisplayed())))
 
-        onView(withId(R.id.rbMale))
-            .check(matches((isDisplayed())))
-
-        onView(withId(R.id.rbFemale))
-            .check(matches((isDisplayed())))
-
+        onView(withId(R.id.spGender))
+            .check(matches(isDisplayed()))
         onView(withId(R.id.btnRegistration))
             .check(matches((isDisplayed())))
 
@@ -82,8 +74,6 @@ class MainActivityTest {
         onView(withId(R.id.tvTerms))
             .check(matches(withText("By clicking 'Register' You agree\n    to our terms and conditions")))
     }
-
-    // Navigation test
 
     @Test
     fun test_navProfilePage() {

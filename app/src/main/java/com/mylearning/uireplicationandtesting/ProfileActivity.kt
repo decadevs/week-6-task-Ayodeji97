@@ -10,35 +10,26 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-//        ivBtnBack.setOnClickListener {
-//            onBackPressed()
-//        }
 
+        // onClick Listener to go back to MainActivity
         flBackToHome.setOnClickListener {
             onBackPressed()
         }
 
         val name = intent.getStringExtra("EXTRA_NAME")
-        val contact = intent.getIntExtra("EXTRA_CONTACT", 0)
+        val contact = intent.getStringExtra("EXTRA_CONTACT" )
         val email = intent.getStringExtra("EXTRA_EMAIL")
         val password = intent.getStringExtra("EXTRA_PASSWORD")
         val userName = intent.getStringExtra("EXTRA_USERNAME")
         val gender = intent.getStringExtra("EXTRA_GENDER")
 
 
+        // Setting text in to respective edit text
         nameInputSpace.text = name
         tvEmailSpace.text = email
         tvContactSpace.text = contact.toString()
         tvUserNameSpace.text = userName
         tvGenderSpace.text = gender
-
-
-
-
-        // val profileDetails = "Full Name: $name\n Email: $email\n Contact: $contact\n Password: $password"
-
-        // tvPersonProfile.text = profileDetails
-
 
 
     }

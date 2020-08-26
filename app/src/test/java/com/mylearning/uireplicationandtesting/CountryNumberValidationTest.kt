@@ -27,14 +27,12 @@ class CountryNumberValidationTest {
     }
 
     @Test
-    fun `contact not not starting with 234`() {
+    fun `fields not empty`() {
 
-        var result = CountryNumberValidation.specialFieldValidation(
-
+        val result = CountryNumberValidation.specialFieldValidation(
             "2348064816696",
             "daniel",
             "Tuir_2321",
-
 
         )
 
@@ -42,82 +40,24 @@ class CountryNumberValidationTest {
 
     }
 
-//    @Test
-//    fun `contact length less than 10 or greater than 13` () {
-//        val result = CountryNumberValidation.validateNameLength(
-//            "1"
-//        )
-//    }
+    @Test
+    fun `validate name and user name length return false when less than 3 ` () {
+        val result = CountryNumberValidation.validateNameLength(
+            "DA",
+            "D"
+        )
+        assertThat(result).isFalse()
 
-//    @Test
-//    fun `empty name or username or password return false` () {
-//        val result = CountryNumberValidation.validatePhoneNumber("08064816696")
-//
-//        assertThat(result).isFalse()
-//    }
-//
-//    @Test
-//    fun `phone number not starting with 234 return false` () {
-//        val result = CountryNumberValidation.validateNameLength(
-//            "Daniel",
-//            "Danny",
-//            ""
-//
-//
-//        )
-//        assertThat(result).isFalse()
-//    }
-//
-//    @Test
-//    fun `phone number not start with 0 return false` () {
-//        val result = CountryNumberValidation.validateRegistrationInput(
-//            "Daniel",
-//            "Danny",
-//            "123",
-//              "70648166960"
-//        )
-//
-//        assertThat(result).isFalse()
-//    }
-//
-//    @Test
-//    fun `phone number is less than 11 return false` () {
-//        val result = CountryNumberValidation.validateRegistrationInput(
-//
-//            "Daniel",
-//            "Danny",
-//            "123",
-//            "080648166",
-//        )
-//
-//        assertThat(result).isFalse()
-//    }
-//
-//    @Test
-//    fun `phone number is greater than 13 return false` () {
-//        val result = CountryNumberValidation.validateRegistrationInput(
-//
-//            "Daniel",
-//            "Danny",
-//            "123",
-//            "080648166456732"
-//
-//        )
-//        assertThat(result).isFalse()
-//    }
-//
-//    @Test
-//    fun `name and username is less than 3 and 2 respectively return false` () {
-//        val result = CountryNumberValidation.validateRegistrationInput(
-//            "Da",
-//            "D",
-//            "123",
-//            "080648166456732"
-//        )
-//
-//        assertThat(result).isFalse()
-//    }
-//
+    }
+
+    @Test
+    fun `validate phone number not start with 234 or 0 return false`() {
+        val result = CountryNumberValidation.validatePhoneNumberStart(
+            "11110845683"
+        )
+        assertThat(result).isFalse()
+    }
+
 
 
 }

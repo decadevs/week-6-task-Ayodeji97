@@ -29,7 +29,7 @@ class CountryNumberValidation {
      *
      */
 
-    fun validatePhoneNumber(userPhone: String) : Boolean {
+    fun validatePhoneNumberStart(userPhone: String) : Boolean {
         if (userPhone.startsWith("0") && !userPhone.startsWith("234")) {
             userPhone.removePrefix("0")
             userPhone.commonPrefixWith("+234")
