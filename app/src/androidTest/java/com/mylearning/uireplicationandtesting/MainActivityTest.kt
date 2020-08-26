@@ -21,8 +21,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4ClassRunner::class)
 class MainActivityTest {
 
-//    @get:Rule
-//    val intentsTestRule = IntentsTestRule(MainActivity::class.java)
+
 
     @Test
     fun test_isActivityInView() {
@@ -102,24 +101,6 @@ class MainActivityTest {
 
         onView(withId(R.id.btnRegistration)).perform(click())
 
-       //  checking if the next activity is the view
-       onView(withId(R.id.userProfile)).check(matches(isDisplayed()))
-    }
-
-    @Test
-    fun test_backPress_toMainActivity() {
-        val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-
-        onView(withId(R.id.btnRegistration)).perform(click())
-
-        onView(withId(R.id.userProfile)).check(matches(isDisplayed()))
-
-
-       // onView(withId(R.id.btnBackMainActivity)).perform(click())
-
-        pressBack()
-
-        onView(withId(R.id.parent_form_activity)).check(matches(isDisplayed()))
 
     }
 

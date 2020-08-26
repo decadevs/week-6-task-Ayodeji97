@@ -131,40 +131,6 @@ class CountryNumberValidation {
 
 
 
-//    fun validateRegistrationInput (
-//        name : String,
-//        userName : String,
-//        password : String,
-//        phone : String
-//    ) : Boolean {
-//
-//        if (name.isEmpty() || userName.isEmpty() || phone.isEmpty() || password.isEmpty()) {
-//            //tvRegisterHeadingTop.error = "Name connot be empty"
-//            return false
-//        }
-//
-//        if (!phone.startsWith("234") || !phone.startsWith("0") || !phone.startsWith("+234")) {
-//            return false
-//        }
-//
-//        if (phone.count { it.isDigit()} < 11) {
-//            return false
-//        }
-//
-//        if (phone.count{ it.isDigit()} > 13) {
-//            return false
-//        }
-//
-//        if (name.count { it.isDigit() } < 3) {
-//            return false
-//        }
-//
-//        if (userName.count { it.isDigit() } < 2) {
-//            return false
-//        }
-//
-//        return true
-//    }
 
     }
 }

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.Gravity
+import android.widget.RadioButton
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.etEmail
@@ -19,20 +20,26 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//        onClick listener on registration button
         btnRegistration.setOnClickListener {
+
+//           edit Text id stored in a variable
             val fullName = etFullName.text.toString()
             val userName = etUserName.text.toString()
             val contact = etPhoneNumber.text.toString()
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString()
+            val checkedGenderById = rgGenderGroup.checkedRadioButtonId
+            val gender = findViewById<RadioButton>(checkedGenderById).toString()
             //val gender = rgGenderGroup.text.toString()
 
-
+            // using vararg to take as much input to validate
             val checkAllFields = CountryNumberValidation(etFullName, etUserName, etPhoneNumber, etEmail, etPassword)
 
+            // Validate contact, email, password
             val inputValidator = CountryNumberValidation.specialFieldValidation(contact, email, password)
 
-
+            // Validate input
             if (checkAllFields != null) {
                 checkAllFields.error = "Fields required"
                 Toast.makeText(this, "${resources.getResourceEntryName(checkAllFields.id) } is empty", Toast.LENGTH_SHORT).show()
@@ -52,7 +59,7 @@ open class MainActivity : AppCompatActivity() {
                     it.putExtra("EXTRA_EMAIL", email)
                     it.putExtra("EXTRA_PASSWORD", password)
                     it.putExtra("EXTRA_USERNAME", userName)
-                  //  it.putExtra("EXTRA_GENDER", gender)
+                    it.putExtra("EXTRA_GENDER", gender)
 
                     startActivity(it)
                 }

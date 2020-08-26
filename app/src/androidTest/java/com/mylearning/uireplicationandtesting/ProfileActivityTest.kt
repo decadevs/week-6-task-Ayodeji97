@@ -110,7 +110,7 @@ class ProfileActivityTest {
         val activityScenario = ActivityScenario.launch(ProfileActivity::class.java)
 
         onView(withId(R.id.tvWelcomeText))
-            .check(matches(ViewMatchers.withText("Glad To Have You On Board")))
+            .check(matches(ViewMatchers.withText("Welcome")))
 
         onView(withId(R.id.btnBackMainActivity))
             .check(matches(ViewMatchers.withText("Back To Home")))
@@ -132,16 +132,6 @@ class ProfileActivityTest {
 
     }
 
-//    @Test
-//    fun test_nav_profile_page_back_to_main_page() {
-//        val activityScenario = ActivityScenario.launch(ProfileActivity::class.java)
-//
-//        activityScenario.moveToState(Lifecycle.State.RESUMED)
-//
-//        onView(withId(R.id.flBackToHome)).perform(click())
-//
-//        //  checking if the next activity is the view
-//        onView(withId(R.id.parent_form_activity)).check(matches(isDisplayed()))
-//    }
+
 
 }

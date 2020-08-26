@@ -26,6 +26,22 @@ class CountryNumberValidationTest {
         assertThat(result).isFalse()
     }
 
+    @Test
+    fun `contact not not starting with 234`() {
+
+        var result = CountryNumberValidation.specialFieldValidation(
+
+            "2348064816696",
+            "daniel",
+            "Tuir_2321",
+
+
+        )
+
+        assertThat(result).isNotEmpty()
+
+    }
+
 //    @Test
 //    fun `contact length less than 10 or greater than 13` () {
 //        val result = CountryNumberValidation.validateNameLength(
