@@ -20,10 +20,11 @@
             android:id="@+id/tvWelcomeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="100dp"
+            android:gravity="center"
             android:fontFamily="sans-serif-medium"
-            android:text="Glad To Have You On Board"
+            android:text="Welcome"
             android:textColor="@color/whiteColor"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -61,7 +62,7 @@
             android:textColor="@color/lightWhite"
             android:clickable="true"
             android:focusable="true"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
     </FrameLayout>
 
@@ -102,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Full Name"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -110,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="full name here"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -141,7 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Username"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -181,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Email Address"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -189,7 +190,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email here"
-                    android:textSize="20sp" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -221,7 +222,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Contact"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -262,7 +263,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Gender"
-                    android:textSize="25dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView

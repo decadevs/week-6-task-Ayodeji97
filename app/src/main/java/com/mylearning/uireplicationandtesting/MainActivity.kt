@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Gravity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.etEmail
@@ -22,25 +23,27 @@ open class MainActivity : AppCompatActivity() {
             val fullName = etFullName.text.toString()
             val userName = etUserName.text.toString()
             val contact = etPhoneNumber.text.toString()
-            val email = etEmail.text.toString()
+            val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString()
-            val gender = etUserName.text.toString()
-
-            val fieldsAreEmpty =
-                CountryNumberValidation.fieldsEmpty(fullName, userName, contact, password)
-
-//            if (!fieldsAreEmpty) {
-//                Toast.makeText(this, "${resources.getResourceEntryName(fieldsAreEmpty.id)}")
-//
-//            }
+            //val gender = rgGenderGroup.text.toString()
 
 
+            val checkAllFields = CountryNumberValidation(etFullName, etUserName, etPhoneNumber, etEmail, etPassword)
 
-            val validate =  CountryNumberValidation.notStartWithCountryCode(contact)
+            val inputValidator = CountryNumberValidation.specialFieldValidation(contact, email, password)
 
-            if (validate == false) {
-                Toast.makeText(this, "Please enter correct input", Toast.LENGTH_LONG).show()
-            } else {
+
+            if (checkAllFields != null) {
+                checkAllFields.error = "Fields required"
+                Toast.makeText(this, "${resources.getResourceEntryName(checkAllFields.id) } is empty", Toast.LENGTH_SHORT).show()
+            }
+            else if (inputValidator != null) {
+                Toast.makeText(this, "${inputValidator} is invalid", Toast.LENGTH_SHORT).show()
+
+
+            }
+
+            else {
 
                 // Creating intent object
                 Intent(this, ProfileActivity::class.java).also {
@@ -49,7 +52,7 @@ open class MainActivity : AppCompatActivity() {
                     it.putExtra("EXTRA_EMAIL", email)
                     it.putExtra("EXTRA_PASSWORD", password)
                     it.putExtra("EXTRA_USERNAME", userName)
-                    it.putExtra("EXTRA_GENDER", gender)
+                  //  it.putExtra("EXTRA_GENDER", gender)
 
                     startActivity(it)
                 }

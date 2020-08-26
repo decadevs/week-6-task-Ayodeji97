@@ -69,6 +69,64 @@ class CountryNumberValidation {
 
         }
 
+        fun specialFieldValidation (contact : String?, email : String?, password: String?) : String? {
+
+            val contactValidator = Regex("^(\\+?234|0)[897][01]\\d{8}${'$'}")
+            val emailValidator = Regex("^[A-Za-z0-9+_.-]+@(.+)$")
+            val passwordValidator = Regex("""^[a-zA-Z0-9@$!._%*#?&]{6,}$""")
+            var message: String? = ""
+
+            when {
+                contact != null && email != null && password != null -> {
+                    val contactMatched = contactValidator.matches(contact)
+                    val emailMatched = emailValidator.matches(email)
+                    val passwordMatched = passwordValidator.matches(password)
+
+                    message = when {
+                        !contactMatched -> contact
+                        !emailMatched -> email
+                        !passwordMatched -> password
+                        else -> null
+                    }
+                }
+
+                contact != null -> {
+                    val contactMatched = contactValidator.matches(contact.toString())
+                    message = when {
+                        !contactMatched -> email
+                        else -> null
+                    }
+                }
+
+                email != null -> {
+                    val emailMatched = emailValidator.matches(email.toString())
+                    message = when {
+                        !emailMatched -> email
+                        else -> null
+                    }
+                }
+
+                password != null -> {
+                    val passwordMatched = passwordValidator.matches(password.toString())
+                    message = when {
+                        !passwordMatched -> email
+                        else -> null
+                    }
+                }
+
+            }
+
+            return message
+
+
+        }
+
+
+
+
+
+
+
 
 
 
