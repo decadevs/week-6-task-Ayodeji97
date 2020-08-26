@@ -145,32 +145,6 @@
             android:popupBackground="#364751"
             android:layout_marginTop="10dp"/>
 
-<!--        <RadioGroup-->
-<!--            android:id="@+id/rgGenderGroup"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <RadioButton-->
-<!--                android:id="@+id/rbMale"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:buttonTint="@color/greenColor"-->
-<!--                android:text="Male"-->
-<!--                android:textColor="@color/blackColor" />-->
-
-<!--            <RadioButton-->
-<!--                android:id="@+id/rbFemale"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:buttonTint="@color/greenColor"-->
-<!--                android:checked="true"-->
-<!--                android:text="Female"-->
-<!--                android:textColor="@color/blackColor" />-->
-<!--        </RadioGroup>-->
-
 
         <!--Registration Button-->
         <Button
